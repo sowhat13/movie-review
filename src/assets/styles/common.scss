@@ -1,0 +1,214 @@
+.page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: $navbar-height;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+
+        .icon {
+            transition: all 0.3s ease;
+
+            color: $accent-color !important;
+        }
+    }
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: $secondary-color;
+    transition: all 0.3s ease;
+
+}
+
+
+.gradient-text {
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+
+.title-banner{
+    background: $primary-gradient;
+    padding: 16px;
+    margin: 30px 0;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 12px;
+
+    span{
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: $light-color;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      display:flex;
+        align-items: center;
+        justify-content: center;
+        gap:12px;
+    } 
+}
+
+.common-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    align-items: center;
+    gap: 20px;
+
+    .title-banner {
+
+        .badge {
+            width: 24px;
+            height: 24px;
+            font-size: 14px;
+        }
+    }
+
+    .common-card-list {
+        display: grid;
+        width: 100%;
+        justify-content: center;
+        grid-template-columns: 200px 200px 200px 200px 200px ;
+        grid-auto-rows: 300px;
+        gap: 12px;
+
+        @media (max-width: 1080px) {
+            grid-template-columns: 200px 200px 200px 200px;
+        }
+        @media (max-width: 880px) {
+            grid-template-columns: 200px 200px ;
+        }
+        @media (max-width: 440px) {
+            grid-template-columns: 200px ;
+        }
+
+    }
+}
+
+
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+
+.shiny-element {
+    background: linear-gradient(125deg, #eee 25%, #dddddd 50%, #eee 75%) rgb(165, 165, 165);
+    animation: shine-right 8s infinite forwards;
+    background-size: 300% 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+//animations
+@keyframes shine-right {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 250%;
+    }
+
+    100% {
+        background-position: 0%;
+
+    }
+}
+
+@keyframes shine-bottom {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 0% 90%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+
+    }
+}
+
+
+//transition
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s ease-in-out;
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(200px);
+  }
+
+.scale-in-out-enter-active{
+    transition: all .5s ease;
+}
+
+.scale-in-out-leave-active{
+    transition: all .5s ease;
+}
+
+.scale-in-out-enter, .scale-in-out-leave-to{
+    transform: scale(0);
+}
+
+.fade-in-out-enter-active{
+    transition: all .5s ease;
+}
+
+.fade-in-out-leave-active{
+    transition: all .5s ease;
+}
+
+.fade-in-out-enter, .fade-in-out-leave-to{
+    opacity: 0;
+}
+
+.fade-in-out-enter-to, .fade-in-out-leave{
+    opacity: 1;
+}
+
+
