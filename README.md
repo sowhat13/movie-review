@@ -1,4 +1,4 @@
-# pixselect-challenge
+# movie-review
 
 ## Project setup
 ```
